@@ -11,11 +11,11 @@ body {
     line-height: 1.25em;
     border: 1px solid black;
     width: 80%;
-    height: auto;
+    height: 100%;
 
 }
 
-.numberedTextarea > textarea, .numberedTextarea > div {
+.numberedTextarea > textarea , .numberedTextarea > div {
     font-size: inherit;
     line-height: inherit;
     min-height: 100%;
@@ -28,7 +28,7 @@ body {
     margin: 0;
 }
 
-.numberedTextarea > textarea {
+.numberedTextarea > textarea, .numberedTextarea > textarea {
     border: none;
     border-left: black solid 1px;
     resize: none;
