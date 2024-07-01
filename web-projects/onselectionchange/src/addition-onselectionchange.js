@@ -5,12 +5,6 @@
 const selectionChangeEventName = "selectionchange"
 
 /**
- * The current HTMLTextareaElement
- * @type {null}
- */
-let currentEl = null
-
-/**
  * Attaches "onselectionchange" dispatcher given element that is triggered by a selection change.
  *
  * @param {HTMLTextAreaElement | HTMLInputElement} el
@@ -34,14 +28,19 @@ function attachSelectionChangeDispatcher(el) {
         // That is, it might cause the read selectionStart/selectionEnd to be old values.
         setTimeout(() => {
             if (previousStart !== el.selectionStart || previousEnd !== el.selectionEnd) {
+
                 previousStart = el.selectionStart
                 previousEnd = el.selectionEnd
+                previousLength = el.value.length
+
                 el.dispatchEvent(new Event(selectionChangeEventName))
             }
         }, 0)
     }
-
-    let previousStart = -1, previousEnd = -1
+    let previousStart = -1, previousEnd = -1, previousLength = -1
     el.addEventListener('keydown', myHandler)   // caret moves or highlight changes
     el.addEventListener('mousemove', myHandler) // caret moves or highlight changes
+    el.addEventListener('mousedown', myHandler) // caret moves or highlight changes
 }
+
+

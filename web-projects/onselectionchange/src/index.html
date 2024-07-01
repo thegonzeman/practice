@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="index.js"></script>
+    <script src="addition-onselectionchange.js"></script>
 </head>
 <body>
-    <textarea autocorrect="off"></textarea>
+    <h1>Showcase: 'addition-onselectionchange.js'</h1>
+    <p>
+        As of writing (6/26/2024), the event 'selectionchange' is an experimental feature that is not supported by most<br>
+        browsers. The JS file linked in this page's &ltscript&gt implements this experimental feature such that it<br>
+        should be supported by all modern browsers (this has not been tested). The implementation is very simple.
+    </p>
+    <h3>How to use</h3>
+    <p>
+        You can attach an event dispatcher to a HTMLTextareaElement or HTMLInputElement using the function<br>
+        attachOnSelectionChangeDispatcher(el), where el is the textarea/input element we want to listen to for selection<br>
+        changes. After attaching the dispatcher, the element will trigger a 'selectionchange' event whenever a selection<br>
+        change occurs within it. This allows for the active tracking of selectionStart and selectionEnd.
+    </p>
+    <h3>Example</h3>
+    <p>Move your caret (cursor) around and highlight the text.</p>
+    <label>
+        <textarea id="textarea-el" spellcheck="false" readonly rows="10" cols="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices, lorem ut varius fermentum, risus enim pharetra urna, ut convallis orci augue vitae erat. Donec venenatis nibh in interdum placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur nibh a odio efficitur, ac elementum neque feugiat. Nunc metus lectus, vulputate sed porttitor vitae, rhoncus sed quam. Morbi id mollis mauris. Vestibulum sollicitudin nibh at nunc euismod vulputate. Cras lacinia, urna sed eleifend vehicula, magna mi molestie lectus, eu feugiat dolor eros vel turpis. Nunc sodales ultrices nulla, pellentesque finibus nisl fringilla id. Curabitur vitae leo id ligula dictum fringilla eget in diam. Mauris ut auctor enim. Praesent at dui eget arcu ultricies sodales vel non purus. Vivamus non risus porta, tincidunt ligula ac, placerat arcu. Aliquam accumsan metus orci, id tincidunt mauris fermentum at.</textarea>
+    </label>
+    <p>Selection start: <span id="selectionStart-el"></span></p>
+    <p>Selection end: <span id="selectionEnd-el"></span></p>
 </body>
 </html>
