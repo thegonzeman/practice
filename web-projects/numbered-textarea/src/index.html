@@ -12,9 +12,12 @@
         A numberedTextarea is composed of a div of class 'numberedTextarea'. Inside this div there must be
         another div--in which the line numbers will be placed--and a textarea--in which the text will be stored.
     -->
-    <div class="numberedTextarea">
+    <div class="custom-textarea-container">
         <div><p>1</p></div>
-        <textarea placeholder="type something here..." autocomplete="off" autocapitalize="off" spellcheck="false" wrap="off"></textarea>
+        <div>
+            <label for="custom-textarea"></label>
+            <textarea id="custom-textarea"></textarea>
+        </div>
     </div>
 </body>
 </html>
